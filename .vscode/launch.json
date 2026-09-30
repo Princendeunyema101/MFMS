@@ -1,0 +1,16 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Run mfms",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/mfms.exe",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "MIMode": "gdb",
+            "preLaunchTask": "build mfms"
+        }
+    ]
+}

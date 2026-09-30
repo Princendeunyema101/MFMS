@@ -1,0 +1,21 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build mfms",
+            "type": "shell",
+            "command": "gcc",
+            "args": [
+                "-Wall",
+                "main.c",
+                "common.c",
+                "budget.c",
+                "suppliers.c",
+                "-o",
+                "mfms"
+            ],
+            "group": { "kind": "build", "isDefault": true },
+            "problemMatcher": ["$gcc"]
+        }
+    ]
+}
