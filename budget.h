@@ -11,17 +11,20 @@ typedef struct {
 } Budget;
 
 extern Budget budgets[MAX_BUDGETS];
-extern int budgetCount;
+extern int    budgetCount;
 
-void  budgetMenu(void);
-void  addBudget(void);
-void  enterExpenditure(void);
+/* Menu entry point */
+void budgetMenu(void);
+
+/* Budget operations */
+void addBudget(void);
+void enterExpenditure(void);
+void displayBudgets(void);
+void displayExceededDepartments(void);
+
+/* Calculation helpers (used by reports.c) */
 float calculateRemaining(float allocated, float expenditure);
-int   isWithinBudget(float allocated, float expenditure); /* 1 = within, 0 = exceeded */
-void  displayBudgets(void);
-void  displayExceededDepartments(void);
-
-/* Used by reports.c */
+int   isWithinBudget(float allocated, float expenditure);
 float getTotalAllocated(void);
 float getTotalExpenditure(void);
 
