@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include "budget.h"
 #include "suppliers.h"
+#include "assets.h"
 int main(void)
 {
     int choice;
@@ -36,7 +37,7 @@ int main(void)
                 supplierMenu();
                 break;
             case 4:
-                printf("Asset Management not yet implemented.\n");
+                assetMenu();
                 break;
             case 5:
                 printf("Reports not yet implemented.\n");
