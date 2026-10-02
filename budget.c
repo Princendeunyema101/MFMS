@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include "budget.h"
-
+#include <ctype.h>
 /* ---------- Module-level storage (extern-declared in budget.h) ---------- */
 Budget budgets[MAX_BUDGETS];
 int    budgetCount = 0;
@@ -10,11 +10,23 @@ int    budgetCount = 0;
  *  HELPER: find a department by name (case-insensitive)
  *  Returns index, or -1 if not found.
  * ============================================================ */
+/* Portable case-insensitive comparison (C99-safe, no strcasecmp) */
 static int findBudget(const char *name)
 {
     int i;
     for (i = 0; i < budgetCount; i++) {
-        if (strcasecmp(budgets[i].department, name) == 0) {
+        const char *a = budgets[i].department;
+        const char *b = name;
+        int same = 1;
+        while (*a && *b) {
+            if (tolower((unsigned char)*a) != tolower((unsigned char)*b)) {
+                same = 0;
+                break;
+            }
+            a++;
+            b++;
+        }
+        if (same && *a == '\0' && *b == '\0') {
             return i;
         }
     }
