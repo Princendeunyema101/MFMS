@@ -2,6 +2,7 @@
 #include "budget.h"
 #include "suppliers.h"
 #include "assets.h"
+#include "reports.h"
 int main(void)
 {
     int choice;
@@ -40,7 +41,7 @@ int main(void)
                 assetMenu();
                 break;
             case 5:
-                printf("Reports not yet implemented.\n");
+                reportsMenu();
                 break;
             case 6:
                 printf("Goodbye!\n");
