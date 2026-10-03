@@ -3,6 +3,7 @@
 #include "suppliers.h"
 #include "assets.h"
 #include "reports.h"
+#include "employees.h"
 int main(void)
 {
     int choice;
@@ -29,7 +30,7 @@ int main(void)
 
         switch (choice) {
             case 1:
-                printf("Employee Management not yet implemented.\n");
+                employeeMenu();
                 break;
             case 2:
                 budgetMenu();
